@@ -51,9 +51,11 @@ createAuth0Client({
             <p>${userProfile.name}</p>
             <img src="${userProfile.picture}" />
           `;
-    document.getElementById("ipt-user-country").textContent = JSON.stringify(
-      await auth0.getUser()
-    );
+    document.getElementById("ipt-user-country").textContent = userProfile['https://example.com/country'];
+
+    //JSON.stringify(
+    // userProfile
+   //);
   } else {
     profileElement.style.display = "none";
   }
