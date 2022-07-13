@@ -51,7 +51,11 @@ createAuth0Client({
             <p>${userProfile.name}</p>
             <img src="${userProfile.picture}" />
           `;
-    document.getElementById("ipt-user-country").textContent = userProfile['https://example.com/country'];
+    const userCountry = userProfile['https://example.com/country'];
+    document.getElementById("ipt-user-country").textContent = userCountry;
+    if(userCountry == 'United States'){
+      document.getElementById("ipt-user-flag").innerHTML = `<img src="img/us-flag.png" alt="United States Flag" height=100>`;
+    }
 
     //JSON.stringify(
     // userProfile
